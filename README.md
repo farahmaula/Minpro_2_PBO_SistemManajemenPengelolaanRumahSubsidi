@@ -46,7 +46,5 @@ diminta untuk memasukkan id pengajuan, NIK pembeli, id rumah yang ingin dibeli k
 
 Menu 3 yaitu proses pengajuan merupakan proses dimana dapat melakukan verifikasi pengajuan pembelian rumah subsidi dengan memastikan data yang ada sudah sesuai agar pengajuan bisa disetujui. Menu 4 yaitu pembayaran dimana proses ini melakukan pembayaran rumah subsidi setelah proses pengajuan pembelian sudah disetujui. Dengan memasukkan id pengajuan lalu ada 2 cara yang bisa dipilih untuk pembayaran yaitu secara cash atau cicilan. Untuk pembayaran cash langsunng dengan memasukkan nominal pembayaran yang sesuai dengan harga rumah yang dibeli. Sementara itu untuk pembayaran cicilan, sistem menghitung jumlah cicilan berdasarkan 30% dari penghasilan pembeli.
 
+# Penerapan Encapsulation & Inheritance
 
-Admin dapat melakukan proses menambah data, melihat, mengubah, dan menghapus data rumah subsidi dan pembeli yang digunakan sebagai syarat mengajukan pembelian rumah subsidi. 
-
-Setelah data dimasukkan pembeli dapat melakukan pengajuan pembelian dengan memasukkan NIK pembeli dan ID rumah yang ingin diajukan. Setelah itu akan dilakukan proses pengajuan, jika penghasilan atau gaji pembeli dibawah 2 juta serta sudah mempunyai rumah sebelumnya maka pengajuan akan ditolak. Setelah pengajuan diproses dan memenuhi persyaratan, pengajuan dapat disetujui dan dilanjutkan ke proses pembayaran. Saat melakukan pembayaran terdapat dua pilihan yaitu sistem cash atau cicilan. Untuk pembayaran cicilan, sistem menghitung jumlah cicilan berdasarkan 30% dari penghasilan pembeli.
