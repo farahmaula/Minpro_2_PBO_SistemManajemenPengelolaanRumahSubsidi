@@ -5,7 +5,8 @@
 package main;
 
 import java.util.Scanner;
-import sistemCrud.ManajemenData;
+import controller.ManajemenData;
+import view.SistemView;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ManajemenData manajemen = new ManajemenData();
+        SistemView view = new SistemView();
         int pilihan;
 
             do {
@@ -30,18 +32,22 @@ public class Main {
                 switch (pilihan) {
                     case 1:
                         manajemen.menuRumah();
+                        view.tampilRumah(manajemen.getDaftarRumah());
                         break;
 
                     case 2:
                         manajemen.menuPembeli();
+                        view.tampilPembeli(manajemen.getDaftarPembeli());
                         break;
 
                     case 3:
                         manajemen.menuDokumen();
+                        view.tampilDokumen(manajemen.getDaftarDokumen());
                         break;
 
                     case 4:
                         manajemen.menuPengajuan();
+                        view.tampilPengajuan(manajemen.getDaftarPengajuan());
                         break;
 
                     case 0:

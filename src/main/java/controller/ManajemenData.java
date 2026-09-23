@@ -2,10 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sistemCrud;
+package controller;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import model.Rumah;
+import model.RumahTersedia;
+import model.RumahTerjual;
 import model.Rumah;
 import model.Pembeli;
 import model.Pengajuan;
@@ -17,10 +20,45 @@ import model.Dokumen;
  */
 public class ManajemenData {
     Scanner input = new Scanner(System.in);
+    private ValidasiInput validasi = new ValidasiInput();
     ArrayList<Rumah> daftarRumah = new ArrayList<>();
     ArrayList<Pembeli> daftarPembeli = new ArrayList<>();
     ArrayList<Pengajuan> daftarPengajuan = new ArrayList<>();
     ArrayList<Dokumen> daftarDokumen = new ArrayList<>();
+    
+    public ManajemenData() {
+        RumahTersedia rumahDummy = new RumahTersedia(
+                "R001", 
+                "A01", 
+                "3x6", 
+                150000000,
+                8,
+                "Blok Lily");
+            daftarRumah.add(rumahDummy);
+        
+        Pembeli pembeliDummy = new Pembeli(
+                "6472056767280002", 
+                "Anggita Melastri", 
+                5000000, 
+                "085612789355", 
+                "Tidak");
+            daftarPembeli.add(pembeliDummy);
+      
+        Pengajuan pengajuanDummy = new Pengajuan(
+                "P001", 
+                "6472056767280002", 
+                "R101", 
+                "Menunggu Verifikasi");
+            daftarPengajuan.add(pengajuanDummy);
+            
+        Dokumen dokumenDummy = new Dokumen(
+                "D001", 
+                "6472056767280002", 
+                "KTP", 
+                "Terverifikasi");
+            daftarDokumen.add(dokumenDummy);
+
+}
 
     // MENU rumah
     
@@ -66,8 +104,15 @@ public class ManajemenData {
     }
 
     public void tambahRumah() {
+        System.out.println("Contoh ID Rumah : R000");
+        System.out.println("=======================\n");
         System.out.print("ID Rumah: ");
         String id = input.nextLine();
+        
+        if (!validasi.isIdRumahValid(id)) {
+            System.out.println("ID Rumah Tidak Valid");
+            return;
+        }
 
         for (Rumah rumah : daftarRumah) {
             if (rumah.getIdRumah().equalsIgnoreCase(id)) {
@@ -76,10 +121,28 @@ public class ManajemenData {
             }
         }
 
+        System.out.println("Contoh Unit : A1");
+        System.out.println("==================\n");
         System.out.print("Unit: ");
         String unit = input.nextLine();
+        
+        if (!validasi.isTeksValid(unit)) {
+            System.out.println("Unit tidak boleh kosong");
+            return;
+        }
+        
+        System.out.println("Contoh Tipe Rumah : 3x5");
+        System.out.println("=======================\n");
         System.out.print("Tipe Rumah: ");
         String tipe = input.nextLine();
+        
+        if (!validasi.isTeksValid(tipe)) {
+            System.out.println("Tipe rumah tidak boleh kosong.");
+            return;
+        }
+        
+        System.out.println("Contoh Harga : 1000000");
+        System.out.println("=======================\n");
         System.out.print("Harga: ");
         double harga = input.nextDouble();
         input.nextLine();
@@ -89,9 +152,31 @@ public class ManajemenData {
             return;
         }
         
-        Rumah rumahBaru = new Rumah(id, unit, tipe, harga, "Tersedia");
+        System.out.println("Contoh Jumlah Unit : 10");
+        System.out.println("========================\n");
+        System.out.print("Jumlah Unit: ");
+        int jumlahUnit = input.nextInt();
+        input.nextLine();
 
+        if (jumlahUnit <= 0) {
+            System.out.println("Jumlah unit harus lebih dari 0.");
+            return;
+        }
+        
+        System.out.println("Contoh Blok Rumah : Blok Mawar");
+        System.out.println("=======================\n");
+        System.out.print("Blok Rumah: ");
+        String blokRumah = input.nextLine();
+
+        if (blokRumah.trim().isEmpty()) {
+            System.out.println("Blok rumah tidak boleh kosong.");
+            return;
+        }
+        
+        // Polymorphic Collection: ArrayList bertipe Superclass (Rumah)
+        Rumah rumahBaru = new RumahTersedia(id, unit, tipe, harga, jumlahUnit, blokRumah);
         daftarRumah.add(rumahBaru);
+
         System.out.println("Rumah subsidi berhasil ditambahkan.");
     }
 
@@ -102,6 +187,7 @@ public class ManajemenData {
             return;
         }
 
+        //Panggil Method Overide
         for (Rumah rumah : daftarRumah) {
             System.out.println("\n==== Rumah Subsidi ====");            
             rumah.tampilkanData();
@@ -110,15 +196,38 @@ public class ManajemenData {
     }
 
     public void ubahRumah() {
+        System.out.println("Contoh ID Rumah : R000");
+        System.out.println("=======================\n");
         System.out.print("Masukkan ID Rumah: ");
         String id = input.nextLine();
+        
+        if (!validasi.isIdRumahValid(id)) {
+            System.out.println("ID Rumah Tidak Valid");
+            return;
+        }
 
         for (Rumah rumah : daftarRumah) {
             if (rumah.getIdRumah().equalsIgnoreCase(id)) {
-                System.out.print("Nomor Unit Baru: ");
+                System.out.println("Contoh Unit : A1");
+                System.out.println("=======================\n");
+                System.out.print("Jumlah Unit Baru: ");
                 String unit = input.nextLine();
+                if (!validasi.isTeksValid(unit)) {
+                    System.out.println("Unit tidak boleh kosong");
+                    return;
+                }
+                
+                System.out.println("Contoh Tipe Rumah : 3x5");
+                System.out.println("=======================\n");
                 System.out.print("Tipe Rumah Baru: ");
                 String tipe = input.nextLine();
+                if (!validasi.isTeksValid(tipe)) {
+                    System.out.println("Tipe rumah tidak boleh kosong.");
+                    return;
+                }
+                
+                System.out.println("Contoh Harga : 2000000");
+                System.out.println("=======================\n");
                 System.out.print("Harga Baru: ");
                 double harga = input.nextDouble();
                 input.nextLine();
@@ -139,8 +248,14 @@ public class ManajemenData {
     }
 
     public void hapusRumah() {
+        System.out.println("Contoh : R000");
+        System.out.println("=======================\n");
         System.out.print("Masukkan ID Rumah: ");
         String id = input.nextLine();
+        if (!validasi.isIdRumahValid(id)) {
+            System.out.println("ID Rumah Tidak Valid");
+            return;
+        }
 
         for (int i = 0; i < daftarRumah.size(); i++) {
             if (daftarRumah.get(i).getIdRumah().equalsIgnoreCase(id)) {
@@ -195,8 +310,14 @@ public class ManajemenData {
     }
 
     public void tambahPembeli() {
+        System.out.println("Contoh NIK : 6472056767280002");
+        System.out.println("==============================\n");
         System.out.print("NIK: ");
         String nik = input.nextLine();
+        if (!validasi.isNikValid(nik)) {
+            System.out.println("NIK harus 16 digit");
+            return;
+        }
 
         for (Pembeli pembeli : daftarPembeli) {
             if (pembeli.getNik().equals(nik)) {
@@ -210,13 +331,34 @@ public class ManajemenData {
             return;
         }
 
+        System.out.println("Contoh Nama : Anggita Melastri");
+        System.out.println("===============================\n");
         System.out.print("Nama: ");
         String nama = input.nextLine();
+        if (!validasi.isTeksValid(nama)) {
+            System.out.println("Nama tidak boleh kosong");
+            return;
+        }
+        
+        System.out.println("Contoh Penghasilan: 2000000");
+        System.out.println("=======================\n");
         System.out.print("Penghasilan: ");
-        double penghasilan = input.nextDouble();
-        input.nextLine();
+        String inputPenghasilan = input.nextLine();
+        if (!validasi.isAngkaPositif(inputPenghasilan)) {
+            System.out.println("Penghasilan berupa angka dan lebih dari 0");
+            return;
+        }
+        double penghasilan = Double.parseDouble(inputPenghasilan);
+        
+        System.out.println("Contoh No HP: 085612789355");
+        System.out.println("=======================\n");
         System.out.print("No HP: ");
         String noHP = input.nextLine();
+        if (!validasi.isNoHPValid(noHP)){
+            System.out.println("No HP tidak boleh kosong");
+            return;
+        }
+        
         System.out.println("Sudah memiliki rumah?");
         System.out.println("1. Ya");
         System.out.println("2. Tidak");
@@ -255,19 +397,36 @@ public class ManajemenData {
     }
 
     public void ubahPembeli() {
+        System.out.println("Contoh NIK : 6472056767280002");
+        System.out.println("=============================\n");
         System.out.print("Masukkan NIK: ");
         String nik = input.nextLine();
+        if (!validasi.isNikValid(nik)) {
+            System.out.println("NIK harus 16 digit");
+            return;
+        }
 
         for (Pembeli pembeli : daftarPembeli) {
             if (pembeli.getNik().equals(nik)) {
-                System.out.print("Nama Baru: ");
-                String nama = input.nextLine();
+                System.out.println("Contoh Penghasilan : 2000000");
+                System.out.println("=======================\n");
                 System.out.print("Penghasilan Baru: ");
                 double penghasilan = input.nextDouble();
                 input.nextLine();
+                if (!validasi.isAngkaPositif(penghasilan)) {
+                    System.out.println("Penghasilan berupa angka dan lebih dari 0");
+                    return;
+                }
+                
+                System.out.println("Contoh No HP : 085612789355");
+                System.out.println("=======================\n");
                 System.out.print("No HP Baru: ");
                 String noHP = input.nextLine();
-                pembeli.setNama(nama);
+                if (!validasi.isNoHPValid(noHP)){
+                    System.out.println("No HP tidak boleh kosong");
+                    return;
+                }
+                
                 pembeli.setPenghasilan(penghasilan);
                 pembeli.setNoHP(noHP);
                 System.out.println("Data pembeli berhasil diubah.");
@@ -278,8 +437,14 @@ public class ManajemenData {
     }
 
     public void hapusPembeli() {
+        System.out.println("Contoh NIK : 6472056767280002");
+        System.out.println("=======================\n");
         System.out.print("Masukkan NIK: ");
         String nik = input.nextLine();
+        if (!validasi.isNikValid(nik)) {
+            System.out.println("NIK harus 16 digit");
+            return;
+        }
 
         for (int i = 0; i < daftarPembeli.size(); i++) {
             if (daftarPembeli.get(i).getNik().equals(nik)) {
@@ -338,8 +503,14 @@ public class ManajemenData {
     }
 
     public void tambahPengajuan() {
+        System.out.println("Contoh : P000");
+        System.out.println("=======================\n");
         System.out.print("ID Pengajuan: ");
         String idPengajuan = input.nextLine();
+        if (validasi.isIdDokumenValid(idPengajuan)){
+            System.out.println("Sesuaikan Format ID Dokumen Seperti Contoh");
+            return;
+        }
 
         for (Pengajuan pengajuan : daftarPengajuan) {
             if (pengajuan.getIdPengajuan().equalsIgnoreCase(idPengajuan)) {
@@ -348,9 +519,15 @@ public class ManajemenData {
             }
         }
 
+        System.out.println("Contoh NIK : 6472056767280002");
+        System.out.println("=======================\n");
         System.out.print("NIK Pembeli: ");
         String nik = input.nextLine();
         Pembeli pembeliDipilih = null;
+        if (!validasi.isNikValid(nik)) {
+            System.out.println("NIK harus 16 digit");
+            return;
+        }
 
         for (Pembeli pembeli : daftarPembeli) {
             if (pembeli.getNik().equals(nik)) {
@@ -371,12 +548,18 @@ public class ManajemenData {
             return;
         }
         
+        System.out.println("Contoh ID Rumah : R000");
+        System.out.println("=======================\n");
         System.out.print("ID Rumah: ");
         String idRumah = input.nextLine();
         boolean rumahTersedia = false;
+        if (!validasi.isIdRumahValid(idRumah)) {
+            System.out.println("ID Rumah Tidak Valid");
+            return;
+        }
 
         for (Rumah rumah : daftarRumah) {
-            if (rumah.getIdRumah().equalsIgnoreCase(idRumah) && rumah.getStatus().equalsIgnoreCase("Tersedia")) {
+            if (rumah.getIdRumah().equalsIgnoreCase(idRumah)) {
                 rumahTersedia = true;
                 break;
             }
@@ -407,8 +590,14 @@ public class ManajemenData {
     }
 
     public void prosesPengajuan() {
+        System.out.println("Contoh ID Pengajuan : P000");
+        System.out.println("=======================\n");
         System.out.print("Masukkan ID Pengajuan: ");
         String id = input.nextLine();
+        if (validasi.isIdDokumenValid(id)){
+            System.out.println("Sesuaikan Format ID Dokumen Seperti Contoh");
+            return;
+        }
 
         for (Pengajuan pengajuan : daftarPengajuan) {
             if (pengajuan.getIdPengajuan().equalsIgnoreCase(id)) {
@@ -461,9 +650,6 @@ public class ManajemenData {
                 }
 
                 boolean ktp = false;
-                boolean kk = false;
-                boolean slipGaji = false;
-                boolean suratRumah = false;
 
                 for (Dokumen dokumen : daftarDokumen) {
 
@@ -471,23 +657,10 @@ public class ManajemenData {
                         if (dokumen.getNamaDokumen().equalsIgnoreCase("KTP")) {
                             ktp = true;
                         }
-
-                        if (dokumen.getNamaDokumen().equalsIgnoreCase("Kartu Keluarga")) {
-                            kk = true;
-                        }
-
-                        if (dokumen.getNamaDokumen().equalsIgnoreCase("Slip Gaji")) {
-                            slipGaji = true;
-                        }
-
-                        if (dokumen.getNamaDokumen().equalsIgnoreCase(
-                                        "Surat Keterangan Belum Memiliki Rumah")) {
-                            suratRumah = true;
-                        }
                     }
                 }
 
-                if (!ktp || !kk || !slipGaji || !suratRumah) {
+                if (!ktp) {
                     System.out.println("Pengajuan belum dapat disetujui.");
                     System.out.println("Dokumen pembeli belum lengkap atau belum terverifikasi.");
                     System.out.println("\nDokumen yang belum terpenuhi:");
@@ -495,33 +668,10 @@ public class ManajemenData {
                     if (!ktp) {
                         System.out.println("- KTP");
                     }
-
-                    if (!kk) {
-                        System.out.println("- Kartu Keluarga");
-                    }
-
-                    if (!slipGaji) {
-                        System.out.println("- Slip Gaji");
-                    }
-
-                    if (!suratRumah) {
-                        System.out.println(
-                                "- Surat Keterangan Belum Memiliki Rumah");
-                    }
                     return;
                 }
 
                 pengajuan.setStatusPengajuan("Disetujui");
-
-                for (Rumah rumah : daftarRumah) {
-
-                    if (rumah.getIdRumah()
-                            .equalsIgnoreCase(pengajuan.getIdRumah())) {
-
-                        rumah.setStatus("Dipesan");
-                        break;
-                    }
-                }
 
                 System.out.println("\nPengajuan DISETUJUI.");
                 System.out.println(
@@ -533,11 +683,19 @@ public class ManajemenData {
     }
     
     public void pembayaran() {
+        System.out.println("Contoh ID Pengajuan : P000");
+        System.out.println("=======================\n");
         System.out.print("Masukkan ID Pengajuan: ");
         String id = input.nextLine();
+        if (!validasi.isIdPengajuanValid(id)){
+            System.out.println("Sesuaikan Format ID Pengajuan Seperti Contoh");
+            return;
+        }
 
+        boolean ditemukanPengajuan = false;
         for (Pengajuan pengajuan : daftarPengajuan) {
             if (pengajuan.getIdPengajuan().equalsIgnoreCase(id)) {
+                ditemukanPengajuan = true;
                 if (!pengajuan.getStatusPengajuan().equalsIgnoreCase("Disetujui")) {
                     System.out.println("Pembayaran tidak dapat dilakukan.");
                     System.out.println("Pengajuan belum disetujui.");
@@ -549,11 +707,20 @@ public class ManajemenData {
                 System.out.println("2. Cicilan");
                 System.out.print("Pilih: ");
                 String pilihan = input.nextLine();
+                if (!validasi.isPilihanValid(pilihan)){
+                    System.out.println("Pilihan berupa angka");
+                    return;
+                }
 
                 if (pilihan.equals("1")) {
+                    System.out.println("Contoh : 1000000");
                     System.out.print("Jumlah Bayar: ");
                     double jumlah = input.nextDouble();
                     input.nextLine();
+                    if (!validasi.isAngkaPositif(jumlah)){
+                        System.out.println("Harus lebih dari 0");
+                        return;
+                    }
 
                     if (jumlah <= 0) {
                         System.out.println("Jumlah pembayaran tidak valid.");
@@ -563,7 +730,6 @@ public class ManajemenData {
                     pengajuan.setMetodePembayaran("Cash");
                     pengajuan.setJumlahBayar(jumlah);
                     System.out.println("Pembayaran cash berhasil disimpan.");
-                    return;
                 }
                 else if (pilihan.equals("2")) {
                     Pembeli pembeliDipilih = null;
@@ -592,14 +758,46 @@ public class ManajemenData {
                 else {
                     System.out.println("Pilihan metode pembayaran tidak valid.");
                 }
+                
+                System.out.println("\n=== DATA PENJUALAN RUMAH ===");
+                System.out.println("Contoh tanggal: 21 Juni 2030");
+                System.out.print("Tanggal Jual: ");
+                String tanggalJual = input.nextLine();
+
+                if (tanggalJual.trim().isEmpty()) {
+                    System.out.println("Tanggal jual tidak boleh kosong.");
+                    return;
+                }
+                
+                boolean ditemukan = false;
+                for (int i = 0; i < daftarRumah.size(); i++) {
+                    Rumah rumah = daftarRumah.get(i);
+
+                    if (rumah.getIdRumah().equalsIgnoreCase(pengajuan.getIdRumah())) {
+                
+                        RumahTerjual rumahLaku = new RumahTerjual(rumah.getIdRumah(), rumah.getUnit(), rumah.getTipeRumah(), rumah.getHarga(), tanggalJual);
+                        daftarRumah.set(i, rumahLaku);
+                        System.out.println("Rumah Telah TERJUAL.");
+                        ditemukan = true;
+                        break;
+                    }
+                }
             }
         }
-        System.out.println("ID Pengajuan tidak ditemukan.");
+        if (!ditemukanPengajuan) {
+            System.out.println("ID Pengajuan tidak ditemukan.");
+        }
     }
 
     public void hapusPengajuan() {
+        System.out.println("Contoh : P000");
+        System.out.println("=======================\n");
         System.out.print("Masukkan ID Pengajuan: ");
         String id = input.nextLine();
+        if (validasi.isIdPengajuanValid(id)){
+            System.out.println("Sesuaikan Format ID Dokumen Seperti Contoh");
+            return;
+        }
 
         for (int i = 0; i < daftarPengajuan.size(); i++) {
             if (daftarPengajuan.get(i).getIdPengajuan().equalsIgnoreCase(id)) {
@@ -654,8 +852,14 @@ public class ManajemenData {
     }
 
     public void tambahDokumen() {
+        System.out.println("Contoh ID Dokumen : D000");
+        System.out.println("=======================\n");
         System.out.print("ID Dokumen: ");
         String id = input.nextLine();
+        if (validasi.isIdDokumenValid(id)){
+            System.out.println("Sesuaikan Format ID Dokumen Seperti Contoh");
+            return;
+        }
 
         for (Dokumen dokumen : daftarDokumen) {
             if (dokumen.getIdDokumen().equalsIgnoreCase(id)) {
@@ -664,9 +868,15 @@ public class ManajemenData {
             }
         }
 
+        System.out.println("Contoh NIK : 6472056767280002");
+        System.out.println("=======================\n");
         System.out.print("NIK Pembeli: ");
         String nik = input.nextLine();
         boolean pembeliAda = false;
+        if (!validasi.isNikValid(nik)) {
+            System.out.println("NIK harus 16 digit");
+            return;
+        }
 
         for (Pembeli pembeli : daftarPembeli) {
             if (pembeli.getNik().equals(nik)) {
@@ -682,9 +892,7 @@ public class ManajemenData {
 
         System.out.println("Jenis Dokumen:");
         System.out.println("1. KTP");
-        System.out.println("2. Kartu Keluarga");
-        System.out.println("3. Slip Gaji");
-        System.out.println("4. Surat Keterangan Belum Memiliki Rumah");
+        System.out.println("2. Surat Keterangan Belum Memiliki Rumah");
         System.out.print("Pilih: ");
         int pilihan = input.nextInt();
         input.nextLine();
@@ -695,14 +903,6 @@ public class ManajemenData {
                 break;
 
             case 2:
-                jenis = "Kartu Keluarga";
-                break;
-
-            case 3:
-                jenis = "Slip Gaji";
-                break;
-
-            case 4:
                 jenis = "Surat Keterangan Belum Memiliki Rumah";
                 break;
 
@@ -730,8 +930,14 @@ public class ManajemenData {
     }
 
     public void verifikasiDokumen() {
+        System.out.println("Contoh ID Dokumen : D000");
+        System.out.println("=======================\n");
         System.out.print("Masukkan ID Dokumen: ");
         String id = input.nextLine();
+        if (validasi.isIdDokumenValid(id)){
+            System.out.println("Sesuaikan Format ID Dokumen Seperti Contoh");
+            return;
+        }
 
         for (Dokumen dokumen : daftarDokumen) {
             if (dokumen.getIdDokumen().equalsIgnoreCase(id)) {
@@ -744,8 +950,14 @@ public class ManajemenData {
     }
 
     public void hapusDokumen() {
+        System.out.println("Contoh ID Dokumen : D000");
+        System.out.println("=======================\n");
         System.out.print("Masukkan ID Dokumen: ");
         String id = input.nextLine();
+        if (validasi.isIdDokumenValid(id)){
+            System.out.println("Sesuaikan Format ID Dokumen Seperti Contoh");
+            return;
+        }
 
         for (int i = 0; i < daftarDokumen.size(); i++) {
             if (daftarDokumen.get(i).getIdDokumen().equalsIgnoreCase(id)) {
@@ -756,4 +968,22 @@ public class ManajemenData {
         }
         System.out.println("ID Dokumen tidak ditemukan.");
     }
+    
+    public ArrayList<Rumah> getDaftarRumah(){
+        return daftarRumah;
+    }
+
+    public ArrayList<Pembeli> getDaftarPembeli(){
+        return daftarPembeli;
+    }
+
+    public ArrayList<Pengajuan> getDaftarPengajuan(){
+        return daftarPengajuan;
+    }
+
+    public ArrayList<Dokumen> getDaftarDokumen(){
+        return daftarDokumen;
+    }
+
+
 }

@@ -1,6 +1,10 @@
-model\Dokumen.class
+view\SistemView.class
 model\Rumah.class
 model\Pengajuan.class
-sistemCrud\ManajemenData.class
+controller\ValidasiInput.class
+controller\ManajemenData.class
+model\RumahTerjual.class
+model\Dokumen.class
+model\RumahTersedia.class
 main\Main.class
 model\Pembeli.class

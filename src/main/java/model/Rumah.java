@@ -9,27 +9,20 @@ package model;
  * @author ACER
  */
 public class Rumah {
-    private String idRumah;
+    private final String idRumah;
     private String unit;
     private String tipeRumah;
-    private String status;
     private double harga;
 
-    public Rumah(String idRumah, String unit, String tipeRumah, double harga, String status) {
+    public Rumah(String idRumah, String unit, String tipeRumah, double harga) {
         this.idRumah = idRumah;
         this.unit = unit;
         this.tipeRumah = tipeRumah;
-        this.harga = harga;
-        this.status = status;
-    
+        this.harga = harga;  
     }
 
     public String getIdRumah() {
         return idRumah;
-    }
-
-    public void setIdRumah(String idRumah) {
-        this.idRumah = idRumah;
     }
 
     public String getUnit() {
@@ -56,19 +49,14 @@ public class Rumah {
         this.harga = harga;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public void tampilkanData() {
-        System.out.println("ID Rumah      : " + idRumah);
-        System.out.println("Unit          : " + unit);
-        System.out.println("Tipe Rumah    : " + tipeRumah);
-        System.out.println("Harga         : Rp. " + harga);
-        System.out.println("Status        : " + status);
+        System.out.println("ID Rumah      : " + this.idRumah);
+        System.out.println("Unit          : " + this.unit);
+        System.out.println("Tipe Rumah    : " + this.tipeRumah);
+        System.out.println("Harga         : Rp. " + this.harga);
+    }
+    
+    public final void cetakDataRumah () {
+        System.out.println("Data Rumah Tersimpan");
     }
 }
