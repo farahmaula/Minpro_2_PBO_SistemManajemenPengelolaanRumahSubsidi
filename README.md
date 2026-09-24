@@ -29,10 +29,16 @@ Apabila ingin mengubah data pembeli yang sudah ada bisa menggunakan menu 3 yaitu
 3. Manajemen Dokumen
 <img width="681" height="189" alt="image" src="https://github.com/user-attachments/assets/ee520496-0af4-40b4-a6f7-992118c7e288" />
 
-Pada menu dokumen ini di menu 1 yaitu tambah dokumen bisa melakukan penambahan dokumen, dengan memasukkan id dokumen, NIK pembeli, dokumen yang dipilih bisa KTP atau surat keterangan belum mempunyai rumah sesuai dengan format yang ada lalu dokumen akan tersimpan tapi statusnya belum diverifikasi. Jika ingin diverifikasi ada pada menu 3 yaitu Verifikasi Dokumendengan memasukkan id dokumen kemudian dicek kembali apakah dokumen sudah sesuai jika sudah sesuai maka statusnya akan terverifikasi. Untuk melihat dokumen yang sudah ditambahkan bisa memilih menu 2 yaitu lihat dokumen seperti pada gambar dibawah ini.
+Pada menu dokumen ini di menu 1 yaitu tambah dokumen bisa melakukan penambahan dokumen, dengan memasukkan id dokumen, NIK pembeli, dokumen yang dipilih bisa KTP atau surat keterangan belum mempunyai rumah sesuai dengan format yang ada lalu dokumen akan tersimpan tapi statusnya belum diverifikasi. 
+
+<img width="828" height="472" alt="image" src="https://github.com/user-attachments/assets/514238fe-5363-4180-87cb-8a39fedf8c2a" />
+
+Jika ingin diverifikasi ada pada menu 3 yaitu verifikasi dokumen dengan memasukkan id dokumen kemudian dicek kembali apakah dokumen sudah sesuai jika sudah sesuai maka statusnya akan terverifikasi seperti pada contoh gambar diatas. Untuk melihat dokumen yang sudah ditambahkan bisa memilih menu 2 yaitu lihat dokumen seperti pada gambar dibawah ini.
 <img width="714" height="149" alt="image" src="https://github.com/user-attachments/assets/ca2403b3-7bb9-4956-81ee-b07ad327a454" />
 
 Menu 4 digunakan untuk menghapus dokumen yang ada dan otomatis akan terhapus pada sistem. Menu 5 yaitu kembali akan mengembalikan sistem ke menu utama dari manajemen rumah subsidi ini dan lanjut untuk manajemen data lainnya.
+<img width="773" height="309" alt="image" src="https://github.com/user-attachments/assets/363ba040-45a2-443d-a949-15fdf6c37a6e" />
+
 
 4. Manajemen Pengajuan Rumah Subsidi
 <img width="625" height="208" alt="image" src="https://github.com/user-attachments/assets/7429debd-668e-4948-8c3f-e8b9473743b7" />
