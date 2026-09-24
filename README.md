@@ -96,7 +96,8 @@ Terlihat pada gambar diatas bahwa atribut di dalam class pengajuan semua diberi 
   Pada gambar diatas adalah subclass rumah tersedia. Didalam class ini terdapat atribut tambahan yaitu jumlah unit dan blok rumah. Penggunaan variabel extends digunakan untuk memberitau bahwa rumah tersedia merupankan subclass atau warisan dari superclass rumah. Variabel super berisi atribut class rumah yang dipanggil. Nantinya data yang tersimpan akan masuk ke dalam public void tampilkan data. Terdapat variabel super.tampilkandata() yang dimana akan mengambil data yang ada di rumah dan menggabungkan dengan data rumah terjual sesuai dengan kode dibawah ini.
   <img width="908" height="280" alt="image" src="https://github.com/user-attachments/assets/1b7d641d-fa4d-4ba3-b6b9-6b9d42332c38" />
   
-<img width="677" height="267" alt="image" src="https://github.com/user-attachments/assets/f73dff83-5543-4c6e-ae48-af14883889f6" />
+   <img width="677" height="267" alt="image" src="https://github.com/user-attachments/assets/f73dff83-5543-4c6e-ae48-af14883889f6" />
+   
 Gambar diatas adalah output dari superclass rumah dan subclass rumah tersedia yang saling terhubung. 
 
 Untuk subclass rumah terjual diterapkan jika selesai melakukan pembayaran pembelian rumah subsidi. Dibawah ini adalah kode yang digunakan pada subclass rumah terjual. Isi subclass ini kurang lebih sama seperti subclass rumah tersedia seperti memanggil data dan isi super nya, yang membedakaan hanya atributnya yaitu mempunyai atribut tanggal jual. 
