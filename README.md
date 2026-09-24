@@ -89,6 +89,20 @@ Terlihat pada gambar diatas bahwa atribut di dalam class pengajuan semua diberi 
    <img width="1098" height="632" alt="image" src="https://github.com/user-attachments/assets/7e54a0e9-b4be-450e-a2c7-7aae886dc099" />
    <img width="985" height="477" alt="image" src="https://github.com/user-attachments/assets/a49accd3-2aad-4ff7-8967-818cafc41fc0" />
 
+- Inheritance
+  Dalam sistem saya menerapkan inheritance dengan terdapat 1 superclass dan 2 subclass. Class rumah pada package model saya jadikan sebagai superclass atau induk dari subclass yang nanti atributnya akan diwariskan pada subclass yang dibuat. Subclass yang dibuat turunan dari rumah yaitu subclass rumah tersedia dan rumah terjual.
+
+  <img width="1283" height="470" alt="image" src="https://github.com/user-attachments/assets/15e62ce2-837c-41b6-bda9-708df4929d4c" />
+  Pada gambar diatas adalah subclass rumah tersedia. Didalam class ini terdapat atribut tambahan yaitu jumlah unit dan blok rumah. Penggunaan variabel extends digunakan untuk memberitau bahwa rumah tersedia merupankan subclass atau warisan dari superclass rumah. Variabel super berisi atribut class rumah yang dipanggil. Nantinya data yang tersimpan akan masuk ke dalam public void tampilkan data. Terdapat variabel super.tampilkandata() yang dimana akan mengambil data yang ada di rumah dan menggabungkan dengan data rumah terjual sesuai dengan kode dibawah ini.
+  <img width="908" height="280" alt="image" src="https://github.com/user-attachments/assets/1b7d641d-fa4d-4ba3-b6b9-6b9d42332c38" />
+  
+<img width="677" height="267" alt="image" src="https://github.com/user-attachments/assets/f73dff83-5543-4c6e-ae48-af14883889f6" />
+Gambar diatas adalah output dari superclass rumah dan subclass rumah tersedia yang saling terhubung. 
+
+Untuk subclass rumah terjual diterapkan jika selesai melakukan pembayaran pembelian rumah subsidi. Dibawah ini adalah kode yang digunakan pada subclass rumah terjual. Isi subclass ini kurang lebih sama seperti subclass rumah tersedia seperti memanggil data dan isi super nya, yang membedakaan hanya atributnya yaitu mempunyai atribut tanggal jual. 
+<img width="1293" height="386" alt="image" src="https://github.com/user-attachments/assets/dc7d4b2d-7407-4e1c-ba72-672f9ead9fe1" />
+
+
 
 
 
