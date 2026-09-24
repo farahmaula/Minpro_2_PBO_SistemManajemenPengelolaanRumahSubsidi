@@ -113,7 +113,9 @@ Pada sistem ini saya menerapkan method overriding pada inheritance rumah tersedi
 <img width="1064" height="181" alt="image" src="https://github.com/user-attachments/assets/546a8dac-5bd1-45f9-a086-b7ecaf488531" />
 Gambar ini adalah method pada class rumah yang dilakukan override pada subclass.
 <img width="1056" height="284" alt="image" src="https://github.com/user-attachments/assets/e15fdbfd-c400-4472-890e-331e0058246b" />
+Gambar diatas adalah penggunaan method override yang ada pada subclass rumah tersedia.
 <img width="1005" height="232" alt="image" src="https://github.com/user-attachments/assets/334b07a8-1665-4ff9-9440-68c4485a9f3b" />
+Gambar diatas adalah penggunaan method override yang ada pada subclass rumah terjual.
 
 
 
