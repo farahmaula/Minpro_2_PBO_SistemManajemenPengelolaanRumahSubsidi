@@ -48,3 +48,41 @@ Menu 3 yaitu proses pengajuan merupakan proses dimana dapat melakukan verifikasi
 
 # Penerapan Encapsulation & Inheritance
 
+- Encapsulation
+
+Dalam sistem manajemen pengelolaan rumah subsidi penerapan encapsulation ada pada semua class yang terdapat pada package model. Encapsulation pada program saya menerapkan access modifier private di dalam atribut class dan cara akses atributnya menggunakan getter dan setter. Dibawah ini adalah gambar dari penerapan encapsulation pada class package model.
+1. Class Rumah
+   <img width="1124" height="325" alt="image" src="https://github.com/user-attachments/assets/1ffc37d4-8ee4-4364-a94e-60ae33c79ac3" />
+   <img width="1106" height="508" alt="image" src="https://github.com/user-attachments/assets/bd4a6646-6369-4a60-8901-21e4480447c1" />
+   <img width="1169" height="734" alt="image" src="https://github.com/user-attachments/assets/5a66c8ea-bc8d-42dc-b2fa-967e31868cce" />
+
+2. Class Pembeli
+   <img width="1243" height="337" alt="image" src="https://github.com/user-attachments/assets/0d141294-a702-4463-89b9-c8294c3446b4" />
+   <img width="1309" height="632" alt="image" src="https://github.com/user-attachments/assets/0b7464ca-2ad9-41f8-95ce-b4743ddef7fe" />
+   <img width="1173" height="636" alt="image" src="https://github.com/user-attachments/assets/98af42d2-235e-4f7d-9cc3-204875efb6b9" />
+   <img width="1112" height="243" alt="image" src="https://github.com/user-attachments/assets/b8d2a317-f9cf-4592-b437-be785919b1b3" />
+
+3. Class Dokumen
+   <img width="1042" height="311" alt="image" src="https://github.com/user-attachments/assets/af78b404-7a0e-40de-8da5-83b443b96517" />
+   <img width="1300" height="607" alt="image" src="https://github.com/user-attachments/assets/c0d80cd7-5cf3-4dc8-962c-a3b6850c6e85" />
+   <img width="1178" height="637" alt="image" src="https://github.com/user-attachments/assets/1d6f1e85-92c8-4639-9da5-675e0a77c698" />
+
+4. Class Pengajuan
+   <img width="1000" height="364" alt="image" src="https://github.com/user-attachments/assets/d026e446-2680-46c6-aa42-d7e41797c240" />
+   <img width="1286" height="665" alt="image" src="https://github.com/user-attachments/assets/4771785d-e2b7-4738-acfc-c1e7c64f5847" />
+   <img width="1098" height="632" alt="image" src="https://github.com/user-attachments/assets/7e54a0e9-b4be-450e-a2c7-7aae886dc099" />
+   <img width="985" height="477" alt="image" src="https://github.com/user-attachments/assets/a49accd3-2aad-4ff7-8967-818cafc41fc0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
