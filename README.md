@@ -51,7 +51,9 @@ Menu 3 yaitu proses pengajuan merupakan proses dimana dapat melakukan verifikasi
 - Encapsulation
 
 Dalam sistem manajemen pengelolaan rumah subsidi penerapan encapsulation ada pada semua class yang terdapat pada package model. Encapsulation pada program saya menerapkan access modifier private di dalam atribut class dan cara akses atributnya menggunakan getter dan setter. Dibawah ini adalah gambar dari penerapan encapsulation pada class package model.
-*1. Class Rumah*
+
+**1. Class Rumah**
+
    <img width="1124" height="325" alt="image" src="https://github.com/user-attachments/assets/1ffc37d4-8ee4-4364-a94e-60ae33c79ac3" />
    <img width="1106" height="508" alt="image" src="https://github.com/user-attachments/assets/bd4a6646-6369-4a60-8901-21e4480447c1" />
    <img width="1169" height="734" alt="image" src="https://github.com/user-attachments/assets/5a66c8ea-bc8d-42dc-b2fa-967e31868cce" />
