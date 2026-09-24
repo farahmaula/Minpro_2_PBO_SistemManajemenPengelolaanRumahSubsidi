@@ -108,6 +108,15 @@ Untuk subclass rumah terjual diterapkan jika selesai melakukan pembayaran pembel
 # Penerapan Nilai Tambah
 
 **1. Polymorphism (method overriding)**
+Pada sistem ini saya menerapkan method overriding pada inheritance rumah tersedia dan rumah terjual. kelas subclass menyediakan implementasi khusus untuk method yang sudah didefinisikan di superclass. Anotasi @Override memberi tahu kompiler bahwa method tersebut berniat menggantikan method milik superclass. Jika ada kesalahan nama atau perbedaan parameter, kompilasi akan langsung gagal (garis merah). Dibawah ini penerapan dan output yang dihasilkan.
+
+<img width="1064" height="181" alt="image" src="https://github.com/user-attachments/assets/546a8dac-5bd1-45f9-a086-b7ecaf488531" />
+Gambar ini adalah method pada class rumah yang dilakukan override pada subclass.
+<img width="1056" height="284" alt="image" src="https://github.com/user-attachments/assets/e15fdbfd-c400-4472-890e-331e0058246b" />
+<img width="1005" height="232" alt="image" src="https://github.com/user-attachments/assets/334b07a8-1665-4ff9-9440-68c4485a9f3b" />
+
+
+
 
 
 
