@@ -121,12 +121,15 @@ Gambar diatas adalah penggunaan method override yang ada pada subclass rumah ter
 <img width="763" height="316" alt="image" src="https://github.com/user-attachments/assets/85e64eda-1d5c-494b-8089-6e76d0d6f87a" />
 ini adalah contoh outputnya dari penggunaan override.
 
+
 **2. Penerapan MVC**
 
 MVC adalah kepanjangan dari model, view, dan controller.
 
 Model adalah bagian yang bertugas mengatur, menyimpan, dan mengambil data. Model berisi semua aturan bisnis dan berinteraksi langsung dengan data. 
+
 View adalah bagian yang bertugas menampilkan informasi kepada pengguna contohnya UI (User Interface). View hanya menerima data yang sudah siap disajikan dan menampilkannya dalam bentuk layar, tombol, atau halaman. View tidak memproses data.
+
 Controller adalah bagian yang bertugas sebagai otak yang menghubungkan View dan Model. Controller menerima input dari pengguna, memprosesnya, meminta data yang diperlukan ke Model, lalu mengirimkan hasilnya kembali ke View untuk ditampilkan.
 
 
