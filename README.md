@@ -132,12 +132,30 @@ View adalah bagian yang bertugas menampilkan informasi kepada pengguna contohnya
 
 Controller adalah bagian yang bertugas sebagai otak yang menghubungkan View dan Model. Controller menerima input dari pengguna, memprosesnya, meminta data yang diperlukan ke Model, lalu mengirimkan hasilnya kembali ke View untuk ditampilkan.
 
+<img width="550" height="442" alt="image" src="https://github.com/user-attachments/assets/9c4f5c9a-c7f4-4801-8c47-78f957fb9e6b" />
+Gambar diatas adalah package yang ada pada sistem ini. Berdasarkan gambar penerapan mvc terbagi menjadi 3 package yaitu model, view, dan controller. 
 
+**1. Package model**
+Package ini bagian dari model dalam MVC. Package ini berisi class yang menampilkan data dan atribut yang digunakan dalam sistem pengelolaan rumah subsidi. Model bertanggung jawab terhadap struktur dan data objek yang digunakan oleh sistem. Class yang ada di dalamnya yaitu:
 
+1. Rumah digunakan untuk menyimpan data rumah subsidi seperti ID rumah, unit, tipe rumah, dan harga.
+2. RumahTersedia adalah subclass dari class rumah sebagai superclass yang digunakan untuk rumah yang masih tersedia, dengan atribut tambahan yaitu jumlah unit dan juga blok rumah.
+3. RumahTerjual adalah subclass dari class rumah sebagai superclass yang digunakan untuk rumah yang sudah selesai melakukan pembayaran/terjual.
+4. Pembeli digunakan untuk menyimpan data calon pembeli rumah seperti NIK, nama, penghasilan, nomor HP, dan status kepemilikan rumah.
+5. Dokumen digunakan untuk menyimpan data dokumen yang diperlukan pembeli seperti KTP atau surat keterangan belum mempunyai rumah.
+6. Pengajuan digunakan untuk menyimpan data pengajuan pembelian rumah, termasuk ID pengajuan, NIK pembeli, ID rumah, status pengajuan, dan informasi pembayaran dan jumlah pembayarannya.
 
+**2. Package View**
 
+Package ini merupakan bagian View pada MVC. Di dalam package ini terdapat class SistemView yang berfungsi sebagai tempat  berinteraksi dengan pengguna atau user interface, seperti menampilkan menu dan memberikan pilihan kepada pengguna. Jadi khusus view memang hanya untuk menampilkan saja tidak bisa mengubah data tersebut.
+Contoh alurnya pengguna atau user interface akan memulai program atau sistem, sistem akan menampilkan menu dan pilihan ke pada pengguna lalu terhubung dengan controlerr yang tugasnya mengelola data yang ada lalu akan terhungung ke model untuk mengambil isi datanya. Jika berdasarkan urutan akan menjadi user - view - controller - model.
 
+Jadi pengguna tidak secara langsung mengubah objek Rumah, Pembeli, dokumen, dan Pengajuan, tetapi memberikan input melalui bagian view yang kemudian diteruskan untuk diproses oleh controller.
 
+**3. Package Controller**
+
+Package ini merupakan bagian Controller dalam MVC. Package ini menangani proses dan logika sistem berdasarkan input yang diberikan melalui View. Terdapat dua class di dalamnya yaitu manajemen data dan validasi input. Class manajemen data adalah bagian utama yang mengatur proses pengelolaan data seperti menambahkan, melihat, menghapus, mengelola, melakukan verifikasi, melakukan pembayaran dan yang lainnya. Class ini menggunakan ArrayList untuk menyimpan data selama program berjalan. Class validasi input digunakan untuk melakukan validasi terhadap input pengguna sebelum diproses oleh sistem. Contohnya melakukan validasi input yang tidak boleh kosong, input angka, NIK, nomor HP, ID rumah, ID dokumen, ID pengajuan, pilihan menu, dan
+angka positif. Dengan demikian, package controller bertugas sebagai pengatur alur dan proses sistem.
 
 
 
