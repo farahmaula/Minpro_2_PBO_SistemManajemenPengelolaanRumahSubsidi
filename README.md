@@ -117,6 +117,9 @@ Gambar diatas adalah penggunaan method override yang ada pada subclass rumah ter
 <img width="1005" height="232" alt="image" src="https://github.com/user-attachments/assets/334b07a8-1665-4ff9-9440-68c4485a9f3b" />
 Gambar diatas adalah penggunaan method override yang ada pada subclass rumah terjual.
 
+<img width="763" height="316" alt="image" src="https://github.com/user-attachments/assets/85e64eda-1d5c-494b-8089-6e76d0d6f87a" />
+ini adalah contoh outputnya dari penggunaan override.
+
 
 
 
