@@ -78,7 +78,7 @@ Dalam sistem manajemen pengelolaan rumah subsidi penerapan encapsulation ada pad
    <img width="1300" height="607" alt="image" src="https://github.com/user-attachments/assets/c0d80cd7-5cf3-4dc8-962c-a3b6850c6e85" />
    <img width="1178" height="637" alt="image" src="https://github.com/user-attachments/assets/1d6f1e85-92c8-4639-9da5-675e0a77c698" />
 
-6. Class Pengajuan
+**6. Class Pengajuan**
 
    <img width="1000" height="364" alt="image" src="https://github.com/user-attachments/assets/d026e446-2680-46c6-aa42-d7e41797c240" />
 
@@ -90,6 +90,7 @@ Terlihat pada gambar diatas bahwa atribut di dalam class pengajuan semua diberi 
    <img width="985" height="477" alt="image" src="https://github.com/user-attachments/assets/a49accd3-2aad-4ff7-8967-818cafc41fc0" />
 
 - Inheritance
+  
   Dalam sistem saya menerapkan inheritance dengan terdapat 1 superclass dan 2 subclass. Class rumah pada package model saya jadikan sebagai superclass atau induk dari subclass yang nanti atributnya akan diwariskan pada subclass yang dibuat. Subclass yang dibuat turunan dari rumah yaitu subclass rumah tersedia dan rumah terjual.
 
   <img width="1283" height="470" alt="image" src="https://github.com/user-attachments/assets/15e62ce2-837c-41b6-bda9-708df4929d4c" />
@@ -102,7 +103,9 @@ Gambar diatas adalah output dari superclass rumah dan subclass rumah tersedia ya
 
 Untuk subclass rumah terjual diterapkan jika selesai melakukan pembayaran pembelian rumah subsidi. Dibawah ini adalah kode yang digunakan pada subclass rumah terjual. Isi subclass ini kurang lebih sama seperti subclass rumah tersedia seperti memanggil data dan isi super nya, yang membedakaan hanya atributnya yaitu mempunyai atribut tanggal jual. 
 <img width="1293" height="386" alt="image" src="https://github.com/user-attachments/assets/dc7d4b2d-7407-4e1c-ba72-672f9ead9fe1" />
+<img width="831" height="312" alt="image" src="https://github.com/user-attachments/assets/b24842f5-95b1-40a2-a352-3e7c2a84260c" />
 
+# Penerapan Nilai Tambah
 
 
 
