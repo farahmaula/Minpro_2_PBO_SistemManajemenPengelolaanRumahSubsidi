@@ -140,6 +140,7 @@ View adalah bagian yang bertugas menampilkan informasi kepada pengguna contohnya
 Controller adalah bagian yang bertugas sebagai otak yang menghubungkan View dan Model. Controller menerima input dari pengguna, memprosesnya, meminta data yang diperlukan ke Model, lalu mengirimkan hasilnya kembali ke View untuk ditampilkan.
 
 <img width="550" height="442" alt="image" src="https://github.com/user-attachments/assets/9c4f5c9a-c7f4-4801-8c47-78f957fb9e6b" />
+
 Gambar diatas adalah package yang ada pada sistem ini. Berdasarkan gambar penerapan mvc terbagi menjadi 3 package yaitu model, view, dan controller. 
 
 **1. Package model**
