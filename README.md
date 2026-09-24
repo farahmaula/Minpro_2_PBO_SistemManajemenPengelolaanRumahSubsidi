@@ -71,12 +71,20 @@ Dalam sistem manajemen pengelolaan rumah subsidi penerapan encapsulation ada pad
 **4. Class Dokumen**
    
    <img width="1042" height="311" alt="image" src="https://github.com/user-attachments/assets/af78b404-7a0e-40de-8da5-83b443b96517" />
+
+   Bisa terlihat pada gambar diatas bahwa atribut di dalam class dokumen semua diberi akses private yang dimana jika access modifier privat maka yang bisa mengakses atribut hanya class itu sendiri sedangkan package, subclass, dan lainnya diluar class dokumen tidak dapat mengakses atribut tersebut. Maka dari itu dibutuhkan getter dan setter agar atribut yang disembunyikan dapat diakses di luar class dokumen.
    
+   Pada gambar dibawah ini adalah penerapan getter yang digunakan untuk mengambil data field dan setter digunakan untuk  mengubah data. Data ini tidak dapat diubah secara sembarangan dari luar class. Perubahan dilakukan melalui setter, sedangkan pengambilan informasi menggunakan getter. Jika sudah melakukan perubahan atau modifikasi pada atribut data akan tersimpan pada public void tampilkan data. Ini adalah penerapan encapsulation pada model class rumah.
    <img width="1300" height="607" alt="image" src="https://github.com/user-attachments/assets/c0d80cd7-5cf3-4dc8-962c-a3b6850c6e85" />
    <img width="1178" height="637" alt="image" src="https://github.com/user-attachments/assets/1d6f1e85-92c8-4639-9da5-675e0a77c698" />
 
 6. Class Pengajuan
+
    <img width="1000" height="364" alt="image" src="https://github.com/user-attachments/assets/d026e446-2680-46c6-aa42-d7e41797c240" />
+
+Terlihat pada gambar diatas bahwa atribut di dalam class pengajuan semua diberi akses private yang dimana jika access modifier privat maka yang bisa mengakses atribut hanya class itu sendiri sedangkan package, subclass, dan lainnya diluar class pengajuan tidak dapat mengakses atribut tersebut. Maka dari itu dibutuhkan getter dan setter agar atribut yang disembunyikan dapat diakses di luar class pengajuan.
+   
+   Pada gambar dibawah ini adalah penerapan getter yang digunakan untuk mengambil data field dan setter digunakan untuk  mengubah data. Data ini tidak dapat diubah secara sembarangan dari luar class. Perubahan dilakukan melalui setter, sedangkan pengambilan informasi menggunakan getter. Jika sudah melakukan perubahan atau modifikasi pada atribut data akan tersimpan pada public void tampilkan data. Ini adalah penerapan encapsulation pada model class pengajuan.
    <img width="1286" height="665" alt="image" src="https://github.com/user-attachments/assets/4771785d-e2b7-4738-acfc-c1e7c64f5847" />
    <img width="1098" height="632" alt="image" src="https://github.com/user-attachments/assets/7e54a0e9-b4be-450e-a2c7-7aae886dc099" />
    <img width="985" height="477" alt="image" src="https://github.com/user-attachments/assets/a49accd3-2aad-4ff7-8967-818cafc41fc0" />
