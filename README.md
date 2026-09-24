@@ -108,7 +108,8 @@ Untuk subclass rumah terjual diterapkan jika selesai melakukan pembayaran pembel
 # Penerapan Nilai Tambah
 
 **1. Polymorphism (method overriding)**
-Pada sistem ini saya menerapkan method overriding pada inheritance rumah tersedia dan rumah terjual. kelas subclass menyediakan implementasi khusus untuk method yang sudah didefinisikan di superclass. Anotasi @Override memberi tahu kompiler bahwa method tersebut berniat menggantikan method milik superclass. Jika ada kesalahan nama atau perbedaan parameter, kompilasi akan langsung gagal (garis merah). Dibawah ini penerapan dan output yang dihasilkan.
+
+Pada sistem ini saya menerapkan method overriding pada inheritance rumah tersedia dan rumah terjual. Subclass menyediakan implementasi khusus untuk method yang sudah didefinisikan di superclass. Anotasi @Override memberi tahu kompiler bahwa method tersebut berniat menggantikan method milik superclass. Jika ada kesalahan nama atau perbedaan parameter, kompilasi akan langsung gagal (garis merah). Dibawah ini penerapan dan output yang dihasilkan. Jika sudah menambahkan override pada subclass kemudian dipanggil ke dalam manajemen data sebagai tempat mengolah menajemen data rumah subsidi.
 
 <img width="1064" height="181" alt="image" src="https://github.com/user-attachments/assets/546a8dac-5bd1-45f9-a086-b7ecaf488531" />
 Gambar ini adalah method pada class rumah yang dilakukan override pada subclass.
@@ -120,7 +121,13 @@ Gambar diatas adalah penggunaan method override yang ada pada subclass rumah ter
 <img width="763" height="316" alt="image" src="https://github.com/user-attachments/assets/85e64eda-1d5c-494b-8089-6e76d0d6f87a" />
 ini adalah contoh outputnya dari penggunaan override.
 
+**2. Penerapan MVC**
 
+MVC adalah kepanjangan dari model, view, dan controller.
+
+Model adalah bagian yang bertugas mengatur, menyimpan, dan mengambil data. Model berisi semua aturan bisnis dan berinteraksi langsung dengan data. 
+View adalah bagian yang bertugas menampilkan informasi kepada pengguna contohnya UI (User Interface). View hanya menerima data yang sudah siap disajikan dan menampilkannya dalam bentuk layar, tombol, atau halaman. View tidak memproses data.
+Controller adalah bagian yang bertugas sebagai otak yang menghubungkan View dan Model. Controller menerima input dari pengguna, memprosesnya, meminta data yang diperlukan ke Model, lalu mengirimkan hasilnya kembali ke View untuk ditampilkan.
 
 
 
